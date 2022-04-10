@@ -1,3 +1,13 @@
+# 필요 라이블러리
+    1. reat-router-dom (라우터)
+    npm i react-router-dom@5.3.0
+    2. react-recoil (형상 관리)
+    npm i reacoil
+    3. react-prop-types (타입 관리)
+    npm i prop-types
+    4. gh-pages (배포)
+    npm i gh-pages
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
