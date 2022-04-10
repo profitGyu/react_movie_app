@@ -1,0 +1,35 @@
+.nav_container{
+    /*  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px 64px;
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    transition: 0.4s ease;
+}
+
+.nav_container a{
+    text-decoration: none;
+}
+
+.nav_container ul{
+    padding: 0;
+    list-style: none;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.title strong {
+    font-size: 32px;
+    color: aliceblue;
+    letter-spacing: 0.5px;
+  }

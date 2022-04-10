@@ -1,4 +1,4 @@
-# 필요 라이블러리
+# 필요 라이브러리
     1. reat-router-dom (라우터)
     npm i react-router-dom@5.3.0
     2. react-recoil (형상 관리)
