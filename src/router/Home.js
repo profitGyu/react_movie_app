@@ -12,7 +12,7 @@ function Home(){
                 return(
                     <div key={index} className={styles.content__box}> 
                         <h3 className={styles.title}>
-                            <Link to="/react_movies">
+                            <Link to={`/category/${content.path}/1`}>
                                 <i><FontAwesomeIcon icon={faLink}/></i>
                                 <span>{content.title}</span>
                             </Link>

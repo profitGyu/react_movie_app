@@ -7,9 +7,9 @@ import {
   useRecoilValue,
 } from "recoil";
 import Detail from "./router/Detail";
+import List from "./router/List";
 import Home from "./router/Home"
 import Nav from "./components/Nav"
-
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path={"/detail"} component={Detail}/>
+          <Route path={"/category/:path/:num"} component={List}/>
+          <Route path={"/movie/:id"} component={Detail}/>
           <Route path={"/react_movie_app"} component={Home}/>
         </Switch>
       </Router>

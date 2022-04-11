@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  margin-top: 150px;
+    margin-top: 150px;
 }
 
 .content__box {
@@ -20,3 +20,8 @@
 .title a :hover {
     text-decoration: underline;
 }
+
+.title a i {
+    margin-right: 20px;
+  }
+  

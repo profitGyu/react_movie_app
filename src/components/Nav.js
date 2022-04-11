@@ -71,7 +71,7 @@ function Nav() {
           {navList.map(({ title, path }) => {
             return (
               <li key={title}>
-                <Link to="/react_movie_app">{title}</Link>
+                <Link to={`/category/${path}/1`}>{title}</Link>
               </li>
             );
           })}

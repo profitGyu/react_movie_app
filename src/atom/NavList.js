@@ -1,15 +1,15 @@
 const navList = [{
     title : "Popular",
-    path: "minimum_rating=7"
+    path: "popular"
   }, {
-    title : "현재상영중",
-    path: "genre=romance"
+    title : "Now_playing",
+    path: "now_playing"
   }, {
-    title : "개봉예정",
-    path: "genre=thriller"
+    title : "Toprated",
+    path: "top_rated"
   }, {
-    title : "높은평점",
-    path: "genre=animation"
+    title : "Up_coming",
+    path: "upcoming"
   }]
 
 export default navList;
