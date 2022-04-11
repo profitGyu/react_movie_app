@@ -8,6 +8,15 @@
     4. gh-pages (배포)
     npm i gh-pages
 
+# .env를 이용하여 배포
+- .env: 기본
+- .env.local: test환경 외에 모든 환경에서 로드됨
+- .env.development: 개발환경 /npm start로 실행할 떄
+- .env.test: 테스트 환경 / npm test로 실행할 떄
+- .env.production: 배포 환경 / npm run build로 실행 할 때
+
+**환경 변수를 설정 할 떄 REACT_APP을 반드시 붙여줘야 함**
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

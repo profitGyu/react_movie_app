@@ -1,14 +1,14 @@
 const navList = [{
-    title : "High Rating",
+    title : "Popular",
     path: "minimum_rating=7"
   }, {
-    title : "Romance",
+    title : "현재상영중",
     path: "genre=romance"
   }, {
-    title : "Thriller",
+    title : "개봉예정",
     path: "genre=thriller"
   }, {
-    title : "Animation",
+    title : "높은평점",
     path: "genre=animation"
   }]
 
