@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import styles from "./List.module.css";
 import { Link } from "react-router-dom";
+import Movie from "../components/Movie";
 
 
 const listNums = [...Array(10)].map((_,i) => i + 1);
@@ -11,9 +12,10 @@ const listNums = [...Array(10)].map((_,i) => i + 1);
 
 function List() {
   const { path, num } = useParams();
-  console.log("path,num:", path, num);
+  
   const [loading, setLoding] = useState(true);
   const [movies, setMovie] = useState([]);
+  
 
   const getMovies = async () => {
     const json = await (
@@ -21,7 +23,7 @@ function List() {
         `https://api.themoviedb.org/3/movie/${path}?api_key=${process.env.REACT_APP_API_KEY}&language=ko-KR&page=${num}`
       )
     ).json();
-    console.log(json.results);
+    
     setMovie(json.results);
   };
 
@@ -36,16 +38,24 @@ function List() {
         <Loading />
       ) : (
         <div className={styles.movies}>
-          {movies.map((movies) => {
-            return <li>{movies.title}</li>;
-          })}
+          {movies.map((movie) => (
+              <Movie 
+                key={movie.id}
+                id={movie.id}
+                title={movie.title}
+                img={movie.poster_path}
+                release_date={movie.release_date}
+                overview={movie.overview}
+                genre_id={movie.genre_ids}
+                />
+          ))}
         </div>
       )}
       <ul className={styles.footer}>
           {loading ? null: listNums.map(
-              listNum => {
+              (listNum, index) => {
                   return (
-                      <li>
+                      <li key={index}>
                           <Link to={`/category/${path}/${listNum}`}>
                           {listNum}
                           </Link>
