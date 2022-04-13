@@ -9,7 +9,13 @@ function Movie({ id, title, img, release_date, overview, genre_id }) {
       <img src={`https://image.tmdb.org/t/p/w500${img}`} alt={title} className={styles.movie__img}/>
       <div>
         <h1 className={styles.movie__title}>
-          <Link to={`/movie/${id}`}>{title.length > 45 ? `${title.slice(0, 50)}...` : title}</Link>
+          <Link to={{
+            pathname: `/movie/${id}`,
+            state:{
+              m_title:title,
+            },
+
+          }}>{title.length > 45 ? `${title.slice(0, 50)}...` : title}</Link>
         </h1>
         <h2 className={styles.movie__year}>{release_date}</h2>
         <p  className={styles.movie__summary}>{overview.length > 120 ? `${overview.slice(0, 120)}..` : overview}</p>

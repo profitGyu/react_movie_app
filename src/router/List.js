@@ -4,7 +4,7 @@ import Loading from "../components/Loading";
 import styles from "./List.module.css";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
-
+import Seo from "../components/Seo";
 
 const listNums = [...Array(10)].map((_,i) => i + 1);
 
@@ -33,6 +33,7 @@ function List() {
 
   return (
     <div className={styles.container}>
+      <Seo title={path}/>
       {loading ? (
         <Loading />
       ) : (

@@ -13,6 +13,7 @@ import Nav from "./components/Nav"
 
 function App() {
   return (
+    // RecoilRoot <- Recoil을 사용할 컴포넌트는 반드시 감사줘야한다.
     <RecoilRoot>
       <Router>
         <Nav />
