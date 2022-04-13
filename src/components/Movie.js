@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "./Movie.module.css";
 import GenreList from "../atom/GenreList";
 
-function Movie({ id, title, img, release_date, overview, genre_id }) {
+function Movie({ id, title, img, release_date, overview, genre_id, movie_style }) {
   return (
-    <div className={styles.movie}>
+    <div className={styles.movie} style={movie_style}>
       <img src={`https://image.tmdb.org/t/p/w500${img}`} alt={title} className={styles.movie__img}/>
       <div>
         <h1 className={styles.movie__title}>

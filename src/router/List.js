@@ -33,7 +33,7 @@ function List() {
 
   return (
     <div className={styles.container}>
-      <Seo title={path}/>
+      <Seo title={path.toUpperCase()}/>
       {loading ? (
         <Loading />
       ) : (

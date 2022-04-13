@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Seo from "../components/Seo";
+import Slide from "../components/Slide";
 
 function Home() {
   return (
     <div className={styles.container}>
-      <Seo title={"Home"}/>
+      <Seo title={"DKFLEX"}/>
       {navList.map((content, index) => {
         return (
           <div key={index} className={styles.content__box}>
@@ -21,6 +22,7 @@ function Home() {
                 <span>{content.title}</span>
               </Link>
             </h3>
+            <Slide cateApi={content.path}/>
           </div>
         );
       })}
