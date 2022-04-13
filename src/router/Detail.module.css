@@ -1,0 +1,79 @@
+.container {
+  margin-top: 150px;
+  background-color: #fef7ff;
+  margin-bottom: 70px;
+  font-weight: 300;
+  padding: 20px;
+  border-radius: 5px;
+  color: #adaeb9;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 2fr;
+  grid-gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  transition: all 0.4s ease;
+  color: white;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(60%);
+}
+
+.show {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  border: solid 0.3px;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 8;
+  align-items: center;
+  color: white;
+}
+
+.show__ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+
+}
+.show__ul li{
+    border: solid 0.3px ghostwhite;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgb(102, 84, 241);
+    color: #fef7ff;
+    margin-right: 5px;
+}
+.show__ul div{
+    width: 170px;
+    padding-top: 15px;
+    text-align: center;
+    border: solid 0.3px ghostwhite;
+    padding: 3px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color:white;
+    color: black;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+    transition: all 0.4s ease;
+
+}
+.show__ul div img{
+    max-width: 150px;
+    max-height: 150px;
+}
