@@ -5,7 +5,7 @@
   width: 1050px;
   overflow: hidden;
   position: relative;
-  left: calc(50% - 525px);
+  
 }
 
 .slide {
@@ -46,4 +46,12 @@
   position: absolute;
   top: calc(50% - 22px);
   right: 80px;
+}
+
+@media screen and (max-width: 960px) {
+  .slide__show,
+  .left,
+  .right {
+    display: none;
+  }
 }

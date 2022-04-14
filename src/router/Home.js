@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Seo from "../components/Seo";
 import Slide from "../components/Slide";
+import MediaQery from "react-responsive";
+
+
 
 function Home() {
   return (

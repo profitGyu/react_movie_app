@@ -3,26 +3,36 @@ import Movie from "./Movie";
 import styles from "./Slide.module.css";
 import Loading from "./Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquareCaretLeft, faSquareCaretRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSquareCaretLeft,
+  faSquareCaretRight,
+} from "@fortawesome/free-solid-svg-icons";
+import MediaQery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 function Slide({ cateApi }) {
   const [loading, setLoding] = useState(true);
   const [movies, setMovie] = useState([]);
   const [trans, setTrans] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(window.innerWidth - 600);
+
+  window.addEventListener('resize',function(){
+    setSlideWidth(window.innerWidth - 600);
+  })
 
   const onClickL = () => {
-    if(trans >= 0){
+    if (trans >= 0) {
       return;
     }
-    setTrans(current => current + 400);
-  }
+    setTrans((current) => current + 400);
+  };
 
   const onClickR = () => {
-    if(trans <= -2450){
+    if (trans <= -2450) {
       return;
     }
-    setTrans(current => current - 400);
-  }
+    setTrans((current) => current - 400);
+  };
 
   const getMovies = async () => {
     const json = await (
@@ -44,13 +54,19 @@ function Slide({ cateApi }) {
       {loading ? (
         <Loading />
       ) : (
-        <div className={styles.slide__show} style={{
-          width:"1400px",
-          left: "calc(40% - 525px)",
-        }}>
-          <div className={styles.slide} style={{
-              transform: `translateX(${trans}px)`
-          }}>
+        <div
+          className={styles.slide__show}
+          style={{
+            width: slideWidth,
+            left: `calc(50% - ${slideWidth / 2}px)`,
+          }}
+        >
+          <div
+            className={styles.slide}
+            style={{
+              transform: `translateX(${trans}px)`,
+            }}
+          >
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
@@ -68,13 +84,20 @@ function Slide({ cateApi }) {
             ))}
           </div>
         </div>
-        
       )}
-      {loading ? null :(
+      {loading ? null : (
         <div>
-          <button className={styles.left} onClick={onClickL}><li><FontAwesomeIcon icon={faSquareCaretLeft} /></li></button>
-          <button className={styles.right} onClick={onClickR}><li><FontAwesomeIcon icon={faSquareCaretRight}/></li></button>
-          </div>
+          <button className={styles.left} onClick={onClickL}>
+            <li>
+              <FontAwesomeIcon icon={faSquareCaretLeft} />
+            </li>
+          </button>
+          <button className={styles.right} onClick={onClickR}>
+            <li>
+              <FontAwesomeIcon icon={faSquareCaretRight} />
+            </li>
+          </button>
+        </div>
       )}
     </div>
   );
